@@ -1,0 +1,36 @@
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% comment %} <!-- css bootstrap 4.6.x --> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+    {% comment %} <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"> {% endcomment %}
+  {% comment %} <!-- css swiper --> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'vendor/swiper/swiper-bundle.min.css' %}"/>
+  {% comment %} <!-- css style --> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'styleAwal.css' %}">
+  <title>LitGo | Home</title>
+</head>
+<body style="background-color:aliceblues">
+  {% block navbar %}  {% endblock %}
+  <!-- <h1>{{ posts }}</h1> -->
+  {% block content %}  {% endblock %}
+
+</body>
+  {% block footer %}  {% endblock %}
+
+<!-- js bootstrap 4.6.x -->
+  <script src="{% static 'vendor/bootstrap/js/jquery.slim.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/popper.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  {% comment %} <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script> {% endcomment %}
+{% comment %} <!-- js swiper  --> {% endcomment %}
+  <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+{% comment %} <!-- js script  --> {% endcomment %}
+  <script src="{% static 'scriptAwal.js' %}"></script>
+</html>
+
+
+

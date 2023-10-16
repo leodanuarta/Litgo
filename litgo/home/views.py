@@ -1,11 +1,16 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-import datetime
-
+from .models import aboutus, sliders, footers
 
 # Create your views here.
 
 def index(request):
-    now = datetime.datetime.now()
-    html = "<html><body><p>Coming Soon Project Sedang Dikembangkan</p><br/>It is now %s.</body></html>" % now
-    return HttpResponse(html)
+    about = aboutus.objects.first()
+    slider = sliders.objects.all()
+    footer = footers.objects.first()
+    context = {
+        'about' : about,
+        'slider' : slider,
+        'footer' : footer
+    }
+
+    return render(request, 'index.html', context)
