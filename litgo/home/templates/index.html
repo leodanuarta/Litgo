@@ -4,7 +4,12 @@
   {% block navbar %}
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-warning ">
       <div class="container">
-        <a class="navbar-brand text-dark" href="/">LitGo</a>
+        <a class="navbar-brand text-dark" href="/">
+          Litgo
+          <img class="logo" src="{{ logo.image.url }}" alt=""
+            style="width: 80px; height: auto;"
+          >
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -56,7 +61,7 @@
             </div>
           {% endfor %}
 
-          <div class="swiper-slide">
+          {% comment %} <div class="swiper-slide">
             <div class="card" style="background-color: #DFA51F;">
               <div class="card__text ">
                 <h3 class="judul">Tasty Nutty</h3>
@@ -110,7 +115,7 @@
                 <img src="{% static '/img/artree-coco-delight.jpg' %}" alt="">
               </div>
             </div>
-          </div>
+          </div> {% endcomment %}
         </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
@@ -122,11 +127,11 @@
       </div>
       <div class="row">
         <div class="col-md-6" style="">
-          <img class="" src="https://media.licdn.com/dms/image/C5603AQGwkhqDQ08lfQ/profile-displayphoto-shrink_800_800/0/1609319707070?e=2147483647&v=beta&t=fLPGvQXASQrWu-pROGg7CwYAxlOPxtPEXd7fGjvIHhM " 
+          <img class="" src="{{ about.image.url }}" 
             alt="" height="550" width="550">
         </div>
         <div class="col-md-6" style="text-align: justify; font-size: 22px;">
-            {{ about }}
+            {{ about.title }}
         </div>
       </div>
     </div>
@@ -143,7 +148,7 @@
             </div>
             <div class="col-sm-4">
               <div class="flex flex-col gap-5 items-start">
-                  <h3 class="text-xl">Hubungi Kami</h3>
+                  <h3 class="text-xl">Contacts</h3>
                   <div class="w-full grid grid-rows-6 gap-3">
                     <div class="w-full">
                       <a class="hover:opacity-40 transition-opacity" href="https://api.whatsapp.com/send?phone=62{{ footer.nomor_hp|slice:"1:" }}">
@@ -162,7 +167,7 @@
             </div>
             <div class="col-sm-4">
               <div class="flex flex-col gap-5 items-start">
-                <h3 class="text-xl">Toko Kami</h3>
+                <h3 class="text-xl">Shops</h3>
                 <div class="w-full grid grid-rows-3 place-content-start gap-5">
                   <div class="flex justify-start w-full">
                     <a class="hover:opacity-40 transition-opacity" href="{{ footer.link_tokopedia }}">
@@ -189,7 +194,7 @@
         <div class="row">
             <div class="col-sm-12">
               <div class="flex flex-col gap-5 items-end">
-                <h3 class="text-xl">Lokasi Kami</h3>
+                <h3 class="text-xl">Location</h3>
                 <div class="mapouter"><div class="gmap_canvas"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=artree healthy snack&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://capcuttemplate.org/">Capcuttemplate.org</a></div><style>.mapouter{position:relative;text-align:right;width:100%;height:400px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:400px;}.gmap_iframe {height:400px!important;}</style></div>
               </div>
             </div>

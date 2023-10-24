@@ -17,15 +17,17 @@ class UpdateOnlyManager(models.Manager):
 
 
 class aboutus(models.Model):
+    name = 'Aboutus CMS'
     title = models.TextField()
+    image = models.ImageField(upload_to='static/img/aboutus')
 
     def __str__(self) :
-        return self.title
+        return self.name
 
 
 class sliders(models.Model):
     titleImage = models.CharField(max_length=256)
-    image = models.ImageField(upload_to='static/img')
+    image = models.ImageField(upload_to='static/img/sliders')
     descImage = models.TextField()
     colorBackground = ColorField(verbose_name='color', default='#FFFFFF')
     colorBackground = ColorField(image_field="image")
@@ -55,6 +57,13 @@ class footers(models.Model):
     link_tokopedia = models.CharField(max_length=200, validators=[url_regex])
     link_blibli = models.CharField(max_length=200, validators=[url_regex])
     link_shopee = models.CharField(max_length=200, validators=[url_regex])
+
+    def __str__(self) :
+        return self.name
+
+class logos(models.Model):
+    name = 'Logo CMS'
+    image = models.ImageField(upload_to='static/img/logo')
 
     def __str__(self) :
         return self.name

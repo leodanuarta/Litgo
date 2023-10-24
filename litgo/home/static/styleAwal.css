@@ -62,11 +62,11 @@
   }
   
   
-  img {
+  /* img {
     width: 100%;
     height: auto;
     vertical-align: bottom;
-  }
+  } */
   
   * {
     box-sizing: border-box;
@@ -82,4 +82,10 @@
     width: 42px;
     height: auto;
     margin-bottom: 20px;
+  }
+
+  .logo{
+    width: 42px;
+    height: auto;
+    background-color: black;
   }
