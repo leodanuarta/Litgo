@@ -10,7 +10,7 @@ class YourModelAdmin(admin.ModelAdmin):
         return False
 
     def has_delete_permission(self, request, obj=None):
-        # Menonaktifkan operasi penghapusan
+        # Menonaktifkan operasi penghapusan 
         return False
 
 class Halaman_AwalAdminArea(admin.AdminSite) :

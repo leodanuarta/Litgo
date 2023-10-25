@@ -137,9 +137,9 @@ JAZZMIN_SETTINGS = {
     "site_title": "Litgo",
     "site_header": "Litgo Admin Dashboard",
     "site_brand": "Litgo Dashboard Hub",
-    "site_icon": "images/favicon.png",
+    "site_icon": "img/logo/logo-small.png",
     # Add your own branding here
-    "site_logo": None,
+    "site_logo": "img/logo/logo-small-nobg.png",
     "welcome_sign": "Welcome to the Litgo Admin Dashboard Hub",
     # Copyright on the footer
     "copyright": "Litgo",
