@@ -90,32 +90,6 @@
     background-color: black;
   }
 
-  /*untuk layar device berukuran kecil*/
-@media screen and (min-width: 450px) {
-  .card .card__image {
-      width: 50%
-  }
-}
 
-/*untuk layar device berukuran sedang*/
-@media screen and (min-width: 550px) {
-  .card .card__image {
-      width: 33%;
-  }
 
-  .card .card__image {
-      width: 67%;
-  }
-}
 
-@media screen and (min-width: 800px) {
-  .container {
-      width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-  }
-
-  .about_image{
-    height: 50px;
-  }
-}
