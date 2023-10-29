@@ -26,23 +26,6 @@
   {% endblock %}
 
   {% block content %}
-  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-<df-messenger
-  intent="WELCOME"
-  chat-title="LitBot"
-  agent-id="af6d2a5d-dbd7-41d1-9d65-82dbd5888d39"
-  language-code="en"
-
-></df-messenger>
-<style> 
-  df-messenger { 
-  --df-messenger-bot-message: #ffc404; 
-  --df-messenger-button-titlebar-color: #ffc404; 
-  --df-messenger-chat-background-color: #fafafa; 
-  --df-messenger-font-color: #041014; 
-  --df-messenger-user-message: #1187ee; } 
-  </style>
-
     <div class="container">
       <h1>Our Healthbar</h1>
       <div class="swiper">
@@ -138,7 +121,6 @@
   {% endblock %}
 
   {% block footer %}
-  
   <footer class="" id="contact">
     <div class="container" style="margin-top: 200px;">
       <hr/>
