@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.contrib.auth.models import Group
 from . import models
 
 
@@ -26,3 +27,4 @@ for m in models:
     halaman_awal_site.register(m)
 # halaman_awal_site.register(models.aboutus)
 # admin.site.register(models.aboutus)
+admin.site.unregister(Group)
