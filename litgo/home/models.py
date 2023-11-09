@@ -15,7 +15,6 @@ class UpdateOnlyManager(models.Manager):
         # Melarang operasi bulk_create() dengan raising exception
         raise NotImplementedError("You cannot use bulk_create() with this manager.")
 
-
 class aboutus(models.Model):
     name = 'Aboutus CMS'
     title = models.TextField()
@@ -24,10 +23,17 @@ class aboutus(models.Model):
     def __str__(self) :
         return self.name
 
+def validate_file_size(value):
+    filesize= value.size
+    
+    if filesize > 2021440:
+        raise ValidationError("Cannot upload file more than 2Mb")
+    else:
+        return value
 
 class sliders(models.Model):
     titleImage = models.CharField(max_length=256)
-    image = models.ImageField(upload_to='static/img/sliders')
+    image = models.ImageField(upload_to='static/img/sliders', validators=[validate_file_size])
     descImage = models.TextField()
     colorBackground = ColorField(verbose_name='color', default='#FFFFFF')
     colorBackground = ColorField(image_field="image")
@@ -55,7 +61,6 @@ class footers(models.Model):
     nomor_hp = models.CharField(max_length=15, validators=[phone_regex])
     link_instagram = models.CharField(max_length=200, validators=[url_regex])
     link_tokopedia = models.CharField(max_length=200, validators=[url_regex])
-    link_blibli = models.CharField(max_length=200, validators=[url_regex])
     link_shopee = models.CharField(max_length=200, validators=[url_regex])
 
     def __str__(self) :

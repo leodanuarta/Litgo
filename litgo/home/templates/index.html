@@ -2,7 +2,7 @@
 {% load static %}
 
   {% block navbar %}
-    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-warning ">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: #F2A600;">
       <div class="container">
         <a class="navbar-brand text-dark" href="/">
           {% comment %} Litgo {% endcomment %}
@@ -43,96 +43,43 @@
   </style> {% endcomment %}
 
     <div class="container">
-      <h1>Our Healthbar</h1>
-      <div class="swiper">
-        <div class="swiper-wrapper">
-          {% for s in slider %}
-            <div class="swiper-slide">
-              <div class="card" style="background-color: {{ s.colorBackground }};">
-                <div class="card__text">
-                  <h3 class="judul">{{ s.titleImage }}</h3>
-                  {{ s.descImage }}
-                </div>
-                <div class="card__image">
-                  <img src="{{ s.image.url }}" alt="" width="550" height="600">
-                </div>
-              </div>
-            </div>
-          {% endfor %}
+      <h1 class="mt-2">Our Products</h1>
 
-          {% comment %} <div class="swiper-slide">
-            <div class="card" style="background-color: #DFA51F;">
-              <div class="card__text ">
-                <h3 class="judul">Tasty Nutty</h3>
-                Tasty Nutty merupakan snack rasa Kacang yang dibuat menggunakan bahan-bahan pilihan. Dalam 35 gram Tasty Nutty terdapat 24% protein, 2% lemak, dan 6% karbohidrat.
-              </div>
-              <div class="card__image">
-                <img src="{% static '/img/artree-tasty-nutty.jpg' %}" alt="">
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card" style="background-color: #195699;">
-              <div class="card__text">
-                <h3 class="judul">Almond Power</h3>
-                Almond Power merupakan snack rasa Almond yang dibuat menggunakan bahan-bahan pilihan. Dalam 35 gram Almond Power terdapat 31% protein, 3% lemak, dan 4% karbohidrat.
-              </div>
-              <div class="card__image">
-                <img src="{% static '/img/artree-almond-power.jpg' %}" alt="">
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card" style="background-color: #D44C26;">
-              <div class="card__text">
-                <h3 class="judul">Crunchy Cashew</h3>
-                Crunchy Cashew merupakan snack rasa Kacang Mete yang dibuat menggunakan bahan-bahan pilihan. Dalam 35 gram Crunchy Cashew terdapat 29% protein, 3% lemak, dan 4% karbohidrat.
-              </div>
-              <div class="card__image">
-                <img src="{% static '/img/artree-crunchy-cashew.jpg' %}" alt="">
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card" style="background-color: #4B3681;">
-              <div class="card__text">
-                <h3 class="judul">Raisin Shine</h3>
-                Raisin Shine merupakan snack rasa Kismis yang dibuat menggunakan bahan-bahan pilihan. Dalam 35 gram Raisin Shine terdapat 29% protein, 0% lemak, dan 5% karbohidrat.
-              </div>
-              <div class="card__image">
-                <img src="{% static '/img/artree-raisin-shine.jpg' %}" alt="">
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card" style="background-color: #01A79B;">
-              <div class="card__text">
-                <h3 class="judul">Coco Delight</h3>
-                Coco Delight merupakan snack rasa Kelapa yang dibuat menggunakan bahan-bahan pilihan. Dalam 35 gram Coco Delight terdapat 29% protein, 3% lemak, dan 5% karbohidrat.
-              </div>
-              <div class="card__image">
-                <img src="{% static '/img/artree-coco-delight.jpg' %}" alt="">
-              </div>
-            </div>
-          </div> {% endcomment %}
+      <!-- Swiper -->
+      <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" navigation="true" space-between="30"
+        centered-slides="true" autoplay-delay="3000" autoplay-disable-on-interaction="false">
+        {% for s in slider %}
+          <swiper-slide><img class="" src="{{ s.image.url }}" alt="" width="960px" height="600px"></swiper-slide>
+        {% endfor %}
+        <div class="autoplay-progress" slot="container-end">
+          <svg viewBox="0 0 48 48">
+            <circle cx="24" cy="24" r="20"></circle>
+          </svg>
+          <span></span>
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-      </div>
-      <div class="row" id="aboutus">
+      </swiper-container>
+      
+      <div class="row" id="aboutus" style="margin-top: 40px;">
         <div class="col-sm-12">
           <h2 style="text-align: end; font-size: 36px;">About Us</h2>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-6" style="">
+        <div class="col-sm-6">
           <img class="about_image" src="{{ about.image.url }}" 
-            alt="" height="550" width="550">
+            alt="">
         </div>
-        <div class="col-md-6" style="text-align: justify; font-size: 22px;">
+        <div class="col-sm-6" style="text-align: justify; font-size: 22px;">
             {{ about.title }}
         </div>
       </div>
+    </div>
+
+    <div class="btn-wa">
+      <a class="hover:opacity-40 transition-opacity" href="https://api.whatsapp.com/send?phone=62{{ footer.nomor_hp|slice:"1:" }}">
+        {% comment %} Whatsapp {% endcomment %}
+        <img class="sosmed" src="{% static 'img/footer/whatsapp.png' %}">
+      </a>
     </div>
   {% endblock %}
 
@@ -148,12 +95,6 @@
               <div class="flex flex-col gap-5 items-start">
                   <h3 class="text-xl">Contacts</h3>
                   <div class="w-full grid grid-rows-6 gap-3">
-                    <div class="w-full">
-                      <a class="hover:opacity-40 transition-opacity" href="https://api.whatsapp.com/send?phone=62{{ footer.nomor_hp|slice:"1:" }}">
-                        {% comment %} Whatsapp {% endcomment %}
-                        <img class="sosmed" src="{% static 'img/footer/whatsapp.png' %}" height="20" width="20">
-                      </a>
-                    </div>
                     <div class="w-full">
                       <a class="hover:opacity-40 transition-opacity" href= "{{ footer.link_instagram }}" >
                         {% comment %} Instagram {% endcomment %}
@@ -173,13 +114,7 @@
                       <img class="ecom" src="{% static 'img/footer/tokopedia.png' %}" height="20" width="20">
                     </a>
                   </div>
-                  <div class="flex justify-start w-full">
-                    <a class="hover:opacity-40 transition-opacity" href="{{ footer.link_blibli }}">
-                      {% comment %} BliBli {% endcomment %}
-                      <img class="ecom" src="{% static 'img/footer/blibli.png' %}" height="20" width="20">
-                    </a>
-                  </div>
-                  <div class="flex justify-start w-full">
+                  <div class="flex justify-start w-full mt-2">
                     <a class="hover:opacity-40 transition-opacity" href="{{ footer.link_shopee }}">
                       {% comment %} Shopee {% endcomment %}
                       <img class="ecom" src="{% static 'img/footer/shopee.png' %}" height="20" width="20">
@@ -192,12 +127,15 @@
         <div class="row">
             <div class="col-sm-12">
               <div class="flex flex-col gap-5 items-end">
-                <h3 class="text-xl">Location</h3>
-                <div class="mapouter"><div class="gmap_canvas"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=artree healthy snack&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://capcuttemplate.org/">Capcuttemplate.org</a></div><style>.mapouter{position:relative;text-align:right;width:100%;height:400px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:400px;}.gmap_iframe {height:400px!important;}</style></div>
+                <h3 class="text-xl">Our Location</h3>
+                <div class="mapouter"><div class="gmap_canvas">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.5088167557606!2d115.1864275!3d-8.643061!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd2396dd76bd73b%3A0x9e3bc9f6a80df8b9!2sLitGo!5e0!3m2!1sid!2sid!4v1699539907282!5m2!1sid!2sid" width="100%%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  <a href="https://capcuttemplate.org/">Capcuttemplate.org</a></div><style>.mapouter{position:relative;text-align:right;width:100%;height:400px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:400px;}.gmap_iframe {height:400px!important;}</style></div>
+                
               </div>
             </div>
         </div>
-        <div class="">© 2023 Artree Healthy Snack.</div>
+        <div class="">© 2023 Prabata Lavanaa.</div>
       </div>
     </footer>
   {% endblock %}
