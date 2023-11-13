@@ -47,9 +47,9 @@
 
       <!-- Swiper -->
       <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" navigation="true" space-between="30"
-        centered-slides="true" autoplay-delay="3000" autoplay-disable-on-interaction="false">
+        centered-slides="true" >
         {% for s in slider %}
-          <swiper-slide><img class="" src="{{ s.image.url }}" alt="" width="960px" height="600px"></swiper-slide>
+          <swiper-slide><img class="" src="{{ s.image.url }}" alt=""></swiper-slide>
         {% endfor %}
         <div class="autoplay-progress" slot="container-end">
           <svg viewBox="0 0 48 48">
@@ -118,6 +118,12 @@
                     <a class="hover:opacity-40 transition-opacity" href="{{ footer.link_shopee }}">
                       {% comment %} Shopee {% endcomment %}
                       <img class="ecom" src="{% static 'img/footer/shopee.png' %}" height="20" width="20">
+                    </a>
+                  </div>
+                  <div class="flex justify-start w-full mt-3">
+                    <a class="hover:opacity-40 transition-opacity" href="{{ footer.link_padiumkm }}">
+                      {% comment %} Shopee {% endcomment %}
+                      <img class="ecom" src="{% static 'img/footer/padiumkm.svg' %}" height="20" width="20">
                     </a>
                   </div>
                 </div>

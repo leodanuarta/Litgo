@@ -35,9 +35,6 @@ class sliders(models.Model):
     titleImage = models.CharField(max_length=256)
     image = models.ImageField(upload_to='static/img/sliders', validators=[validate_file_size])
     descImage = models.TextField()
-    colorBackground = ColorField(verbose_name='color', default='#FFFFFF')
-    colorBackground = ColorField(image_field="image")
-
 
     def __str__(self) :
         return self.titleImage
@@ -62,6 +59,7 @@ class footers(models.Model):
     link_instagram = models.CharField(max_length=200, validators=[url_regex])
     link_tokopedia = models.CharField(max_length=200, validators=[url_regex])
     link_shopee = models.CharField(max_length=200, validators=[url_regex])
+    link_padiumkm = models.CharField(max_length=200, validators=[url_regex])
 
     def __str__(self) :
         return self.name
